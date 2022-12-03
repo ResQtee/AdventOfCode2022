@@ -8,3 +8,8 @@ Console.WriteLine();
 Console.WriteLine();
 
 Day2.Print();
+
+Console.WriteLine();
+Console.WriteLine();
+
+Day3.Print();
