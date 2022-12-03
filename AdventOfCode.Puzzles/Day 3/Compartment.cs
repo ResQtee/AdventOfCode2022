@@ -2,7 +2,7 @@
 
 public class Compartment
 {
-    public string Items { get; set; }
+    public IEnumerable<char> Items { get; set; } = new List<char>();
 
-    public char[] DifferentItemTypes => Items.Distinct().ToArray();
+    public IEnumerable<char> DifferentItemTypes => Items.Distinct().ToArray();
 }

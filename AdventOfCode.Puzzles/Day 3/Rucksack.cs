@@ -2,21 +2,48 @@
 
 public class Rucksack
 {
-    public Compartment Compartment1 { get; set; } = new Compartment();
-    public Compartment Compartment2 { get; set; } = new Compartment();
+    public List<Compartment>? Compartments { get; set; }
+
+    public IEnumerable<char> AllItems()
+    {
+        IEnumerable<char> items = new List<char>();
+        if (Compartments == null)
+        {
+            return items;
+        }
+
+        return Compartments.Aggregate(items, (current, compartment) => current.Concat(compartment.Items));
+    }
 
     public char FindOutOfPlaceItem()
     {
-        return FindOutOfPlaceItem(Compartment1, Compartment2);
+        return FindOutOfPlaceItem(Compartments).FirstOrDefault();
     }
-        
-    private char FindOutOfPlaceItem(Compartment compartmentOne, Compartment compartmentTwo)
+    
+    public IEnumerable<char> FindCommonItems(Rucksack[] rucksacks)
     {
-        var itemsCompartmentOne = compartmentOne.Items;
-        var itemsCompartmentTwo = compartmentTwo.Items;
+        IEnumerable<char> commonItems = this.AllItems(); // not really common items at first, it makes it so we can intersect with this rucksack's items.
+        foreach (var rucksack in rucksacks)
+        {
+            commonItems = commonItems.Intersect(rucksack.AllItems());
+        }
 
-        var outOfPlaceItem = itemsCompartmentOne.Intersect(itemsCompartmentTwo).First();
+        return commonItems;
+    }
 
-        return outOfPlaceItem;
+    private IEnumerable<char> FindOutOfPlaceItem(IReadOnlyList<Compartment>? compartments)
+    {
+        if (compartments == null)
+        {
+            return new List<char>();
+        }
+
+        var commonItems = compartments.First().Items;
+        for (var index = 1; index < compartments.Count; index++)
+        {
+            commonItems = commonItems.Intersect(compartments[index].Items);
+        }
+
+        return commonItems;
     }
 }

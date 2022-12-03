@@ -16,13 +16,16 @@ public class RucksacksInventoryList
 
                     rucksacks.Add(new Rucksack
                     {
-                        Compartment1 = new Compartment
+                        Compartments = new List<Compartment>
                         {
-                            Items = line[..(line.Length / 2)]
-                        },
-                        Compartment2 = new Compartment
-                        {
-                            Items = line[(line.Length / 2)..]
+                            new Compartment
+                            {
+                                Items = line[..(line.Length / 2)].ToCharArray()
+                            },
+                            new Compartment
+                            {
+                                Items = line[(line.Length / 2)..].ToCharArray()
+                            }
                         }
                     });
                 }
