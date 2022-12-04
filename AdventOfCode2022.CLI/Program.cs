@@ -13,3 +13,8 @@ Console.WriteLine();
 Console.WriteLine();
 
 Day3.Print();
+
+Console.WriteLine();
+Console.WriteLine();
+
+Day4.Print();
