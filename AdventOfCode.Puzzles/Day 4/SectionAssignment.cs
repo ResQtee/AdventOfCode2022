@@ -14,6 +14,11 @@ public class SectionAssignment
     {
         return other.Min <= Min && other.Max >= Max;
     }
+
+    public bool IsOverlapping(SectionAssignment other)
+    {
+        return other.Min <= Max && Min <= other.Max;
+    }
 }
 
 public class Assignments
@@ -39,10 +44,15 @@ public class Assignments
         return assignments;
     }
 
-    public static int CountFullyContainedAssignment(List<(SectionAssignment firstAssignment, SectionAssignment secondAssignment)> assignments)
+    public static int CountFullyContainedAssignments(List<(SectionAssignment firstAssignment, SectionAssignment secondAssignment)> assignments)
     {
         return assignments.Count(assignment => assignment.firstAssignment.Encapsulates(assignment.secondAssignment) 
                                                                         || assignment.firstAssignment.IsEncapsulated(assignment.secondAssignment));
+    }
+
+    public static int CountOverlappingAssignments(List<(SectionAssignment firstAssignment, SectionAssignment secondAssignment)> assignments)
+    {
+        return assignments.Count(assignment => assignment.firstAssignment.IsOverlapping(assignment.secondAssignment));
     }
 
     private static SectionAssignment ParseAssignment(string assignment)
