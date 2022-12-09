@@ -21,5 +21,15 @@ Day4.Print();
 
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 Day5.Print();
+Console.WriteLine();
+Console.WriteLine();
+
+Day6.Print();
+
+Console.WriteLine();
+Console.WriteLine();
+*/
+
+Day7.Print();
