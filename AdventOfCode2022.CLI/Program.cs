@@ -30,6 +30,10 @@ Day6.Print();
 
 Console.WriteLine();
 Console.WriteLine();
-*/
 
 Day7.Print();
+
+Console.WriteLine();
+Console.WriteLine();
+*/
+Day8.Print();
