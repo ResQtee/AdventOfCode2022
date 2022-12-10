@@ -8,13 +8,15 @@ public class Tree
         Height = height;
     }
 
+    public int ScenicScore { get; set; } = 0;
+
     public Position Position { get; }
 
     public int Height { get; }
 
     public override string ToString()
     {
-        return $"[{Position.XCoordinate},{Position.YCoordinate}] H:{Height}";
+        return $"[{Position.XCoordinate},{Position.YCoordinate}] H:{Height} S:{ScenicScore}";
     }
 }
 
