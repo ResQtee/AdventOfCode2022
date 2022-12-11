@@ -2,44 +2,44 @@
 
 Console.WriteLine("Answers for Advent of Code 2022");
 /*
-Day1.Print();
+Day01.Print();
 
 Console.WriteLine();
 Console.WriteLine();
 
-Day2.Print();
+Day02.Print();
 
 Console.WriteLine();
 Console.WriteLine();
 
-Day3.Print();
+Day03.Print();
 
 Console.WriteLine();
 Console.WriteLine();
 
-Day4.Print();
+Day04.Print();
 
 Console.WriteLine();
 Console.WriteLine();
 
-Day5.Print();
+Day05.Print();
 Console.WriteLine();
 Console.WriteLine();
 
-Day6.Print();
-
-Console.WriteLine();
-Console.WriteLine();
-
-Day7.Print();
+Day06.Print();
 
 Console.WriteLine();
 Console.WriteLine();
 
-Day8.Print();
+Day07.Print();
+
+Console.WriteLine();
+Console.WriteLine();
+
+Day08.Print();
 
 Console.WriteLine();
 Console.WriteLine();
 */
 
-Day9.Print();
+Day09.Print();
