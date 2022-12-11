@@ -35,5 +35,11 @@ Day7.Print();
 
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 Day8.Print();
+
+Console.WriteLine();
+Console.WriteLine();
+*/
+
+Day9.Print();
