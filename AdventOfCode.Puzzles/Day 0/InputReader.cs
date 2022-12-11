@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Puzzles.Day_0
 {
-    internal class InputReader
+    public class InputReader
     {
         public void Read(string fileName)
         {
