@@ -24,7 +24,11 @@ public class Day10
 
         Console.WriteLine();
         Console.WriteLine("Example 2:");
-        Console.WriteLine($"Answer: ");
+        var clock2 = new ClockCircuit();
+        var cpu2 = new CPU(clock2);
+        var crt = new CRT(clock2, cpu2);
+        ip.Execute(@".\day 10\input\example.txt", cpu2);
+        
 
         clock = new ClockCircuit();
         cpu = new CPU(clock);
@@ -43,11 +47,10 @@ public class Day10
 
         Console.WriteLine();
         Console.WriteLine("Puzzle 2:");
-        Console.WriteLine($"Answer: ");
-    }
-
-    private static void CpuOnRegisterCycleThresholdReached(object? sender, RegisterCycleThresholdReachedEventArgs e)
-    {
-        throw new NotImplementedException();
+        clock2 = new ClockCircuit();
+        cpu2 = new CPU(clock2);
+        crt = new CRT(clock2, cpu2);
+        ip.Execute(@".\day 10\input\puzzle.txt", cpu2);
+        
     }
 }

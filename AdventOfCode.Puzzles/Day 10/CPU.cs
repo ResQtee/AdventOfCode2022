@@ -4,7 +4,7 @@ public class CPU
 {
     private readonly ClockCircuit clock;
 
-    public event EventHandler<RegisterCycleThresholdReachedEventArgs> RegisterCycleThresholdReached;
+    public event EventHandler<RegisterCycleThresholdReachedEventArgs>? RegisterCycleThresholdReached;
 
     public int RegisterX { get; private set; }
 
@@ -18,7 +18,7 @@ public class CPU
 
     private void OnClockOnCycleThresholdReached(object? sender, CycleThresholdReachedEventArgs e)
     {
-        Console.WriteLine($"C:{e.Cycles} | X:{RegisterX}");
+        //Console.WriteLine($"C:{e.Cycles} | X:{RegisterX}");
 
         RegisterCycleThresholdReached?.Invoke(this, 
             new RegisterCycleThresholdReachedEventArgs { Cycles = e.Cycles, RegisterXValue = RegisterX });

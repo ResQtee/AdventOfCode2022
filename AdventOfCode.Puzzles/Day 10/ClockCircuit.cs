@@ -3,6 +3,7 @@
 public class ClockCircuit
 {
     public event EventHandler<CycleThresholdReachedEventArgs>? CycleThresholdReached;
+    public event EventHandler<CycleThresholdReachedEventArgs>? NewCycle;
         
     public int CycleId { get; private set; } = 0;
 
@@ -11,6 +12,8 @@ public class ClockCircuit
     public void Cycle()
     {
         CycleId++;
+
+        NewCycle?.Invoke(this, new CycleThresholdReachedEventArgs{Cycles = CycleId});
 
         if (cycleEventTriggers.Contains(CycleId))
         {
