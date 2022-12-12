@@ -25,7 +25,6 @@ public class Rope
                 }
                 else
                 {
-                    // Determine delta x and delta y between this knot and the previous knot.
                     FollowKnot(Knots[knotIndex-1], Knots[knotIndex] );
                 }
             }
