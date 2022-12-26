@@ -38,5 +38,8 @@ Console.WriteLine();
 
 Day08.Print();
 Day09.Print();
-*/
+
 Day10.Print();
+*/
+
+Day11.Print();
